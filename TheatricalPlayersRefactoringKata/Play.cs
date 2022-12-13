@@ -1,16 +1,22 @@
+using System;
+
 namespace TheatricalPlayersRefactoringKata
 {
-    public class Play
+    public abstract class Play
     {
         private string _name;
-        private string _type;
-
         public string Name { get => _name; set => _name = value; }
-        public string Type { get => _type; set => _type = value; }
 
-        public Play(string name, string type) {
+        public Play(string name) {
             this._name = name;
-            this._type = type;
+        }
+
+        // Cost information may not rightly belong to the play, but it's better than the statement printer!
+        abstract public int CalculateCost(int audience);
+
+        public int CalculateComedyCredit(int audience)
+        {
+            return Math.Max(audience - 30, 0);
         }
     }
 }
