@@ -23,9 +23,9 @@ namespace TheatricalPlayersRefactoringKata
             _cost  = _play.CalculateCost(_audience);
         }
 
-        public void CalculateComedyCredit()
+        public void CalculateCredit()
         {
-            _comedyCredit = _play.CalculateComedyCredit(_audience);
+            _comedyCredit = _play.CalculateCredit(_audience);
         }
     }
 }

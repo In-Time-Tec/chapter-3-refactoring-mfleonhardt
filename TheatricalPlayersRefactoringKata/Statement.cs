@@ -18,7 +18,7 @@ namespace TheatricalPlayersRefactoringKata
 
         public void BuildPlayRow(Performance performance)
         {
-            body += (cultureInfo, "  {0}: {1:C} ({2} seats)\n",
+            body += String.Format(cultureInfo, "  {0}: {1:C} ({2} seats)\n",
                 performance.Play.Name,
                 FormatCost(performance.Cost),
                 performance.Audience
@@ -35,9 +35,9 @@ namespace TheatricalPlayersRefactoringKata
             amountOwed = String.Format(cultureInfo, "Amount owed is {0:C}\n", FormatCost(totalAmountOwed));
         }
 
-        public void BuildCreditEarned(int totalComedyCredits)
+        public void BuildCreditEarned(int totalCredits)
         {
-            creditEarned = String.Format("You earned {0} credits\n", totalComedyCredits);
+            creditEarned = String.Format("You earned {0} credits\n", totalCredits);
         }
 
         public string Generate()

@@ -16,6 +16,7 @@ namespace TheatricalPlayersRefactoringKata
             foreach(var performance in invoice.Performances) 
             {
                 CalculatePerformanceData(performance);
+                System.Console.WriteLine(performance.ComedyCredit);
                 IncrementTotals(performance);
                 statement.BuildPlayRow(performance);
             }
@@ -29,7 +30,7 @@ namespace TheatricalPlayersRefactoringKata
         private void CalculatePerformanceData(Performance performance)
         {
             performance.CalculateCost();
-            performance.CalculateComedyCredit();
+            performance.CalculateCredit();
         }
 
         private void InitializeStatement()

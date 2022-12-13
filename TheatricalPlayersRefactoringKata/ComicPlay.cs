@@ -1,3 +1,5 @@
+using System;
+
 namespace TheatricalPlayersRefactoringKata
 {
     public class ComicPlay : Play
@@ -14,6 +16,16 @@ namespace TheatricalPlayersRefactoringKata
             }
             playCost += 300 * audience;
             return playCost;
+        }
+
+        public override int CalculateCredit(int audience)
+        {
+            return base.CalculateCredit(audience) + CalculateComedyCredit(audience);
+        }
+
+        private int CalculateComedyCredit(int audience)
+        {
+            return (int)Math.Floor((double) audience / 5);
         }
     }
 }
